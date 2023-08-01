@@ -1,0 +1,31 @@
+.spinner-container {
+    background-color: transparent;
+    z-index: 9999;
+    position: fixed;
+    width: 100px;
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 0.5rem;
+  }
+  
+  .spinner-container p {
+    text-align: center;
+    margin: 5px 0 0 0;
+  }
+  
+  #upper {
+    animation: rotate 3s linear infinite;
+    transform-origin: center;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+  }
+  

@@ -1,0 +1,85 @@
+.card button {
+    margin-left: 10px;
+    border: 1px solid grey;
+
+}
+
+.card .badge {
+    border: 0px;
+    background-color: brown;
+    color: white;
+    font-size: 15px;
+    font-size: bolder;
+    border-radius: 15px;
+    position: absolute;
+    right: 10px;
+    width: 100px;
+}
+
+.card .card-title{
+    text-align: center;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+.shadowl{
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+.noshadow{
+    font-size: 14px;
+    text-shadow: 0px;
+    line-height: 0.5;
+}
+
+.description{
+    color: black;
+    font-size: 15px;
+
+}
+
+#modify{
+position: absolute;
+z-index: 1;
+bottom: 1px;
+height: 34px;
+right: 2px;
+font-size: 13px;
+width: 100px;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+#modify:hover {
+    background-color: rgb(234, 132, 8);
+    color: black;
+    display: fixed;
+}
+
+#delete{
+    position: absolute;
+    z-index: 1;
+    top:-15px;
+    left: -19px;
+    font-size: 17px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 20px;height: 37px;
+    justify-content: center;
+    text-align: center;
+    display: fixed;
+}
+
+
+#respondent{
+    position: absolute;
+    z-index: 1;
+    bottom:1px;
+    left: -19px;
+    font-size: 14px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    height: 34px;
+    justify-content: center;
+    text-align: center;
+    display: fixed;
+}
