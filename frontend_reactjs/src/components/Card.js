@@ -1,12 +1,34 @@
 import React,{useState,useEffect} from 'react';
 import { useLocation,useNavigate } from 'react-router-dom';
-import '../Styles/Card.css';
+// import '../Styles/Card.css';
 
 
 
 const Card=(props)=> {
     const location = useLocation();
     const navigate = useNavigate();
+    const [event,setEvent]=useState();
+
+
+    useEffect(() => {
+      
+        console.log("event" + props.event);
+        if (props.event != null){
+            setEvent(props.event);
+        }
+        
+
+    }, [props.event]);
+
+    useEffect(() => {
+      
+    if (props.event2 != null){
+            setEvent(props.event2);
+        }
+     
+    }, [props.event2])
+    
+    
 
     const shadows ={
         textShadow: '2px 2px 4px rgba(0, 0, 0, 0.3)',
@@ -37,8 +59,8 @@ const Card=(props)=> {
     
 
     const mystyle={
-        filter: props.event >= 3 ? 'blur(5px)' : 'none',
-
+        
+        filter: props.event >= 3 || props.event2 >= 5 ? 'blur(5px)' : 'none',
     }
 
   return (
@@ -48,7 +70,7 @@ const Card=(props)=> {
       <div className={`card card-margin ${props.color ? `bg-${props.color}` : ''}`} style={mystyle}>
             <div className="card-header no-border">
                 <h5 className="card-title text-size-lg fw-bolder text-shadow" style={shadows}> {props.title}</h5>
-                <button className='bg-black text-large text-center' style={beautify} > {props.event} </button>
+                <button className='bg-black text-large text-center' style={beautify} > {event} </button>
             </div>
             <div className="card-body pt-0">
                 <div className="widget-49">
@@ -64,7 +86,7 @@ const Card=(props)=> {
                     </div>
                     
                     <div className="widget-49-meeting-action">
-                        <button type="button"  onClick={() => EventManage(props.eventmanage)} className="hoverNow btn btn-sm ">Click Now </button>
+                        <button type="button"  onClick={() => EventManage(props.eventmanage)} className="hoverNow btn btn-sm border-black fw-bold">Click Now </button>
                     </div>
                 </div>
             </div>

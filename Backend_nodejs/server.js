@@ -61,6 +61,68 @@ app.post('/getEventDetails' , (req,res)=>{
 
 });
 
+app.post('/getInvites' ,(req,res)=>{
+
+  const q = 'select count(eventTitle) AS invites from invitation where eventTitle= ? ';
+  connection.query(q,[req.body.title],(err, result) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      return res.json({ message: 'ServerError' });
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+
+
+app.post('/getInvitations',(req,res)=>{
+  const q2 = `SELECT invitation.username AS username, invitation.id AS invitationId, invitation.message AS invitationMessage, event.title AS eventTitle, event.description AS eventDescription, event.location AS eventLocation,event.time AS eventTime, event.numOfRsvp AS eventNumOfRsvp, event.date AS eventDate FROM invitation JOIN event ON invitation.eventId = event.id WHERE invitation.invitedUsername = ? and invitation.status ='pending' `;
+
+  connection.query(q2,[req.body.Username],(err, result) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      return res.json({ message: 'ServerError' });
+    } else {
+      res.json(result);
+    }
+  });
+});
+
+app.post('/accept-invite', (req, res) => {
+  const queries = [
+    'update user set numOfRsvp = numOfRsvp + 1 where username = ' + connection.escape(req.body.username),
+    'update event set numOfRsvp = numOfRsvp + 1 where title = ' + connection.escape(req.body.eventTitle),
+    'update invitation set status = ' + connection.escape('accepted') + ' where id = ' + connection.escape(req.body.invitationId),
+  ];
+
+  connection.query(queries.join(';'), (err, results) => {
+    if (err) throw err;
+
+    res.json({ message: "All queries updated" });
+  });
+});
+
+
+
+
+
+
+
+app.post('/delete-invite', (req,res)=>{
+  const q2 =' delete from invitation where id=?';
+  connection.query(q2,[req.body.invitationId],(err, result) => {
+    if (err) {
+      console.error('Error querying database:', err);
+      return res.json({ message: 'ServerError' });
+    } else {
+      res.json({ message : " ok deleted "});
+    }
+  });
+
+});
+
+
 app.post('/getUserNames',(req,res)=>{
 
   console.log(req.body.Username);

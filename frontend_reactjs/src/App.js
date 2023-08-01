@@ -11,7 +11,7 @@ import CreateEvent from './components/Event/CreateEvent';
 import ModifyEvent from './components/Event/ModifyEvent';
 import ViewEvent from './components/Event/ViewEvent';
 import InvitePeople from './components/Event/InvitePeople';
-
+import CheckInvitation from './components/Event/CheckInvitation';
 
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
           <Route path='/user/modify-event' element={<ModifyEvent></ModifyEvent>}></Route>
           <Route path='/user/view-event' element={<ViewEvent></ViewEvent>}></Route>
           <Route path='/user/invite-people' element={<InvitePeople></InvitePeople>}></Route>
+          <Route path='/user/check-invitations'  element={<CheckInvitation></CheckInvitation>}></Route>
         </Routes>
       </Router>
     </>  

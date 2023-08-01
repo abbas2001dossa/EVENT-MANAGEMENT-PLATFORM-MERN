@@ -96,7 +96,7 @@
     position: absolute;
     right: 150px;
     width: 190px;
-    top: 65px;
+    top: -35px;
     border: 2px solid black;
     background-color: white;
     color: rgb(0, 0, 0);
@@ -112,7 +112,7 @@
     position: absolute;
     right: 160px;
     width: 190px;
-    top: 165px;
+    top: -40px;
     border: 2px solid blue;
     background-color: white;
     color: rgb(0, 0, 0);

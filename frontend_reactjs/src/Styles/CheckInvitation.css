@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:weight@100;200;300;400;500;600;700;800&display=swap");
+
+
+
+
+       .card23{
+
+        width: 380px;
+        border: none;
+        border-radius: 15px;
+        padding: 8px;
+        background-color: #fff;
+        position: relative;
+        height: 470px;
+        margin-left: 150px;
+       }
+
+       .upper{
+
+        height: 100px;
+
+       }
+
+       .upper img{
+
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+
+       }
+
+       .user{
+        position: relative;
+       }
+
+       .profile img{
+
+        
+        height: 80px;
+        width: 80px;
+        margin-top:2px;
+
+       
+       }
+
+       .profile{
+
+        position: absolute;
+        top:-50px;
+        left: 38%;
+        height: 90px;
+        width: 90px;
+        border:3px solid #000000;
+
+        border-radius: 50%;
+
+       }
+
+       .follow{
+
+        border-radius: 15px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 35px;
+       }
+
+       .stats span{
+
+        font-size: 29px;
+       }
+
+
+       .text-shadow{
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+       }
+
+
+       #location{
+        position: absolute;
+        left: 2px;
+        top: 0px;
+
+        font-size: 12px;
+        border-radius: 50px;
+        font-weight: bold;
+
+       }
+
+
+
+
+
+       /* speech bubble */
+       #speechBubble img {
+        
+        
+        height: 150px;
+       
+
+       }
+
+       .text {
+        position: absolute; /* Position the paragraph inside the speech bubble */
+        font-size: 10px;
+        color: rgb(0, 0, 0); /* Text color */
+        top: 35px;
+        right: 60px;
+      }
+      
+      
+       
+
+       #speechBubble {
+         /* Set the positioning context for the speech bubble */
+        display: inline-block; /* To make sure the speech bubble takes only the required width */
+        padding: 10px; /* Padding inside the speech bubble */position: absolute;
+        top:-55px;
+        right: -40px;
+        
+      }
+
+       .container{
+        position: relative;
+        z-index: 1;
+       }
+
+       #Decline{
+        margin-left: 100px;
+       }
+       #accept{
+        margin-right: 100px;
+       }

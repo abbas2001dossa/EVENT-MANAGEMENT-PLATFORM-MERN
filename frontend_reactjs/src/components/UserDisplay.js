@@ -11,6 +11,8 @@ function  UserDisplay(){
   const [username,setUsername] = useState('');
   const [numberOfEvent,setNumberOfEvent]=useState();
   const currentDate = new Date();
+  const [numberOfRsvp,setNumberOfRsvp]=useState();
+
   const monthNames = [
     'January', 'February', 'March', 'April', 'May', 'June', 'July',
     'August', 'September', 'October', 'November', 'December'
@@ -24,6 +26,8 @@ function  UserDisplay(){
       console.log('Data:', response.data);
       setUsername(response.data[0].username);
       setNumberOfEvent(response.data[0].numOfEventsCreated);
+      
+      setNumberOfRsvp(response.data[0].numOfRsvp);
     })
     .catch((error) => {
       console.error('Error fetching data:', error);
@@ -32,6 +36,7 @@ function  UserDisplay(){
     
 
 }, []);
+
 
 
 
@@ -54,7 +59,7 @@ function  UserDisplay(){
           <Card eventmanage={"modify-event"} display={'none'} color={"info"} day={currentDay} month={currentMonth}  title={" Modify an Event "} description={" Update suitable date,time and location for an event, which is already made."}  ></Card>
           <Card eventmanage={"view-event"} display={'none'} color={"secondary"} day={currentDay} month={currentMonth}  title={" View Your Events "} description={" View the events you created, in addition delete any which doesnt suit you."}  ></Card>
           <Card eventmanage={"invite-people"} display={'none'} color={"danger"} day={currentDay} month={currentMonth}  title={"Invite People"} description={"Once your event is created, you can invite how many people you vwant..."}  ></Card>
-          <Card eventmanage={"check-invitations"} display={'none'} color={"warning"} day={currentDay} month={currentMonth}  title={" Check Invitations "} description={" Check if someone has invited you for an event, and thus respond to it"}  ></Card>
+          <Card eventmanage={"check-invitations"} event2={numberOfRsvp} display={''} color={"warning"} day={currentDay} month={currentMonth}  title={" Check Invitations "} description={" Check if someone has invited you for an event, and thus respond to it"}  ></Card>
         </div>
       </div>   
     </>

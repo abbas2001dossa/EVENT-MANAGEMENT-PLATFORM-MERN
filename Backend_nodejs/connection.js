@@ -4,7 +4,8 @@ let connection = createConnection({
     host: 'localhost',
     user: 'root',
     password: 'asbnbnassd123456',
-    database: 'codesy_todoapp'
+    database: 'codesy_todoapp',
+    multipleStatements: true,
 });
 
 
