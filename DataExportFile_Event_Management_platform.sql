@@ -34,7 +34,7 @@ CREATE TABLE `event` (
   PRIMARY KEY (`id`),
   KEY `userIdKey_idx` (`userId`),
   CONSTRAINT `userIdKey` FOREIGN KEY (`userId`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +43,7 @@ CREATE TABLE `event` (
 
 LOCK TABLES `event` WRITE;
 /*!40000 ALTER TABLE `event` DISABLE KEYS */;
-INSERT INTO `event` VALUES (21,'KARBALA','-LADY ZAINAB\n-IMAM HUSSAIN \n- KARBALA','2023-07-20','10:55','Lahore',2,2),(24,'ABBAS\'s BIRTHDAY ','BALLONS, GEOGRAPHY STUFF, BOOKS FOR FREE, FREE POPCARON','2023-08-17','16:27','Islamabad',0,7),(26,'LOSING HOPE','PATIENT WITH SEVERE MENTAL ILLNESS, mOTIVAATION TALK ETC','2023-08-23','04:42','Karachi',0,7),(27,'CHECK','CHELER CHECKER CHECKER ','2023-09-06','06:32','Islamabad',0,7),(28,'Saras Farewell','- destination to be decided yet - gift to be decided - invites to be couples','2023-08-24','19:19','Lahore',0,2),(29,'Anti Depressant Side Effect Lecture','POINTS :\neffects of pills \nwhat makes you depress and stressed ?','2023-09-01','19:21','Lahore',0,2);
+INSERT INTO `event` VALUES (21,'KARBALA','-LADY ZAINAB\n-IMAM HUSSAIN \n- KARBALA','2023-07-20','10:55','Lahore',3,2),(24,'ABBAS\'s BIRTHDAY ','BALLONS, GEOGRAPHY STUFF, BOOKS FOR FREE, FREE POPCARON','2023-08-17','16:27','Islamabad',0,7),(26,'LOSING HOPE','PATIENT WITH SEVERE MENTAL ILLNESS, mOTIVAATION TALK ETC','2023-08-23','04:42','Karachi',0,7),(27,'CHECK','CHELER CHECKER CHECKER ','2023-09-06','06:32','Islamabad',0,7),(29,'Anti Depressant Side Effect Lecture','POINTS :\neffects of pills \nwhat makes you depress and stressed ?','2023-09-01','19:21','Lahore',1,2),(30,'KARBALA','-LADY ZAINAB\n-IMAM HUSSAIN \n- KARBALA\n- Role of imam zainualbideen','2023-07-26','10:55','Lahore',1,11),(31,'Sermon On Quran','Books of relevation \npropjhet and Quran','2023-09-01','07:54','Lahore',0,11);
 /*!40000 ALTER TABLE `event` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `invitation` (
   PRIMARY KEY (`id`),
   KEY `eventIdFK_idx` (`eventId`),
   CONSTRAINT `eventIdFK` FOREIGN KEY (`eventId`) REFERENCES `event` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=30 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `invitation` (
 
 LOCK TABLES `invitation` WRITE;
 /*!40000 ALTER TABLE `invitation` DISABLE KEYS */;
-INSERT INTO `invitation` VALUES (21,21,'KARBALA','AhmedKamal11','internee','accepted','MUST ATTEND'),(22,21,'KARBALA','AhmedKamal11','Zehra','pending','MUST ATTEND'),(23,24,'ABBAS\'s BIRTHDAY ','internee','AhmedKamal11','pending','Please attend with \nFAMILY'),(24,26,'LOSING HOPE','internee','AhmedKamal11','pending','PLEASE ATTEND '),(26,21,'KARBALA','AhmedKamal11','Bilal Baig','accepted','Check this out '),(27,21,'KARBALA','AhmedKamal11','Zehra','pending','Check this out '),(28,21,'KARBALA','AhmedKamal11','George','pending','Check this out '),(29,21,'KARBALA','AhmedKamal11','Ahmed2001','pending','Check this out ');
+INSERT INTO `invitation` VALUES (21,21,'KARBALA','AhmedKamal11','internee','accepted','MUST ATTEND'),(22,21,'KARBALA','AhmedKamal11','Zehra','pending','MUST ATTEND'),(23,24,'ABBAS\'s BIRTHDAY ','internee','AhmedKamal11','pending','Please attend with \nFAMILY'),(24,26,'LOSING HOPE','internee','AhmedKamal11','pending','PLEASE ATTEND '),(26,21,'KARBALA','AhmedKamal11','Bilal Baig','accepted','Check this out '),(27,21,'KARBALA','AhmedKamal11','Zehra','pending','Check this out '),(28,21,'KARBALA','AhmedKamal11','George','pending','Check this out '),(29,21,'KARBALA','AhmedKamal11','Ahmed2001','pending','Check this out '),(30,21,'KARBALA','George123','AhmedKamal11','pending','PLease attend, and bring family !'),(31,21,'KARBALA','George123','Bilal Baig','pending','PLease attend, and bring family !'),(32,21,'KARBALA','George123','internee','accepted','PLease attend, and bring family !'),(33,29,'Anti Depressant Side Effect Lecture','AhmedKamal11','George123','accepted','Message from AHmed ');
 /*!40000 ALTER TABLE `invitation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -94,7 +94,7 @@ CREATE TABLE `user` (
   `numOfEventsCreated` int DEFAULT '0',
   `numOfRsvp` int DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -103,9 +103,17 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'abbasdossa','fast123','Admin','accepted',0,0),(2,'AhmedKamal11','123',NULL,'accepted',3,0),(3,'Laraib','123',NULL,'pending',0,0),(4,'Ahmad121','ert',NULL,'accepted',0,0),(5,'Malik RIaz','1212',NULL,'pending',0,0),(6,'Bilal Baig','fast',NULL,'accepted',0,1),(7,'internee','23',NULL,'accepted',3,1),(8,'Zehra','rew',NULL,'accepted',0,0),(9,'George','usm',NULL,'accepted',0,0),(10,'Ahmed2001','43',NULL,'accepted',0,0);
+INSERT INTO `user` VALUES (1,'abbasdossa','fast123','Admin','accepted',0,0),(2,'AhmedKamal11','123',NULL,'accepted',2,0),(3,'Laraib','123',NULL,'pending',0,0),(4,'Ahmad121','ert',NULL,'accepted',0,0),(5,'Malik RIaz','1212',NULL,'pending',0,0),(6,'Bilal Baig','fast',NULL,'accepted',0,1),(7,'internee','23',NULL,'accepted',3,2),(8,'Zehra','rew',NULL,'accepted',0,0),(9,'George','usm',NULL,'accepted',0,0),(10,'Ahmed2001','43',NULL,'accepted',0,0),(11,'George123','fasd',NULL,'accepted',2,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Dumping events for database 'codesy_todoapp'
+--
+
+--
+-- Dumping routines for database 'codesy_todoapp'
+--
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -116,4 +124,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-08-01  7:24:10
+-- Dump completed on 2023-08-01 10:17:59
