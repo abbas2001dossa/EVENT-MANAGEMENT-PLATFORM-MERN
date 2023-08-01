@@ -1,5 +1,4 @@
 import './App.css';
-import Navbar from './components/Navbar';
 import { BrowserRouter as Router, Routes,Route } from 'react-router-dom';
 import AlertMessage from './components/AlertMessage';
 import Register from './components/Register';
