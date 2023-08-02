@@ -1,9 +1,13 @@
 # EVENT-MANAGEMENT-PLATFORM-MERN
 
-# Provided :
-#-Frontend And Backend Folders of React and nodejs 
-#-DataBase Data And Structure File 
+# Provided 
+
+#-Frontend And Backend Folders of React and nodejs
+
+#-DataBase Data And Structure File
+
 #-Screen Record Of the Event Management Platform
+
 
 
 # How TO Run The MERN EVENT MANAGEMENT PLATFORM On Your PC 
