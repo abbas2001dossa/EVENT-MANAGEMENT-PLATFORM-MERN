@@ -73,22 +73,22 @@ function Register() {
 
               <div className="d-flex flex-row align-items-center mb-4 ">
                 <MDBIcon fas icon="user me-3" size='lg'/>
-                <MDBInput value={formData.username} name="username" onChange={handleInputChange} label='Your username' id='form1' type='text' className='w-100'/>
+                <MDBInput value={formData.username} data-testid="test-username" name="username" onChange={handleInputChange} label='Your username' id='form1' type='text' className='w-100'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="lock me-3" size='lg'/>
-                <MDBInput value={formData.password} name="password" onChange={handleInputChange} label='Password' id='form3' type='password'/>
+                <MDBInput value={formData.password} data-testid="test-pass" name="password" onChange={handleInputChange} label='Password' id='form3' type='password'/>
               </div>
 
               <div className="d-flex flex-row align-items-center mb-4">
                 <MDBIcon fas icon="key me-3" size='lg'/>
-                <MDBInput label='Repeat your password' name="repassword" value={formData.repassword} onChange={handleInputChange} id='form4' type='password'/>
+                <MDBInput label='Repeat your password' data-testid="test-repass" name="repassword" value={formData.repassword} onChange={handleInputChange} id='form4' type='password'/>
               </div>
 
               
 
-              <button className='mb-4 btn btn-primary btn-lg' size='lg' onClick={ RegisterClick} style={{ transform: 'scale(1)' }}>Register</button>
+              <button  data-testid="registerbtn" className='mb-4 btn btn-primary btn-lg' size='lg' onClick={ RegisterClick} style={{ transform: 'scale(1)' }}>Register</button>
 
             </MDBCol>
 

@@ -7,7 +7,7 @@ const AlertMessage =(props)=> {
     const severityM = props.severity;
 
   return (
-    <div>
+    <div data-testid="alert-message" >
       <Alert severity={severityM}> {message} </Alert>
     </div>
   )

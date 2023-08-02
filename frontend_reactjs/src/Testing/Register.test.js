@@ -1,13 +1,10 @@
-import {render, fireEvent ,screen , cleanup} from '@testing-library/react';
+import {render, fireEvent ,act,screen , cleanup} from '@testing-library/react';
 import Register from '../components/Register';
-import { MemoryRouter } from 'react-router-dom';
-import axios from 'axios';
-import React from 'react';import { act } from 'react-dom/test-utils'; 
-
-jest.mock('axios', () => ({
-    post: jest.fn(),
-  }));
-
+import { MemoryRouter,Router , Routes , Route } from 'react-router-dom';
+import React from 'react';
+import {createMemoryHistory} from "history";
+import UserEvent from '@testing-library/user-event';
+import AlertMessage from '../components/AlertMessage';
 
 test(' Checking if all inputs are storing values and updating its relative states',()=>{
 
@@ -26,4 +23,34 @@ test(' Checking if all inputs are storing values and updating its relative state
     expect(passwordInput.value).toBe('fast1234');
     expect(repasswordInput.value).toBe('fast1234');
 });
+
+
+
+describe("postReq", () => {
+  it("Should create post when valid username and passwords are inputted", async () => {
+    await act(async () => {
+      const history = createMemoryHistory();
+      act(() => {
+      render(
+        <MemoryRouter history={history}>
+          <Register></Register>
+        </MemoryRouter>
+      );
+      });
+    });
+    const usernameInput = screen.getByLabelText('Your username');
+    const passwordInput = screen.getByLabelText('Password');
+    const repasswordInput = screen.getByLabelText('Repeat your password');
+    UserEvent.type(usernameInput , "Ahmad Khokar");
+    UserEvent.type(passwordInput, "wassup");
+    UserEvent.type(repasswordInput, "wassup");
+    
+    const RegisterButton = screen.getByTestId('registerbtn');
+    UserEvent.click(RegisterButton);
+    
+    const alertMessage = screen.getByTestId('alert-message');
+    expect(alertMessage).toBeInTheDocument();
+  });
+});
+
 

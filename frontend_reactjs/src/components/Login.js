@@ -82,8 +82,8 @@ function Login() {
 
             <MDBCol col='4' md='6'>
 
-            <MDBInput wrapperClass='mb-4' name="username" value={Data.username} onChange={handleInputChange} label='Username'  type='email' size="lg"/>
-            <MDBInput wrapperClass='mb-4' name="password" value={Data.password} onChange={handleInputChange} label='Password'  type='password' size="lg"/>
+            <MDBInput name="username" wrapperClass='mb-4'  value={Data.username} onChange={handleInputChange} label='Username'  type='email' size="lg"/>
+            <MDBInput name="password" wrapperClass='mb-4'  value={Data.password} onChange={handleInputChange} label='Password'  type='password' size="lg"/>
 
             <div className="d-flex justify-content-between mb-4">
                 <MDBCheckbox name='flexCheck' value='' id='flexCheckDefault' label='Remember me' />
