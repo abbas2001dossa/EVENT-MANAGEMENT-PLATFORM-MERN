@@ -36,6 +36,9 @@
 
 #- npm start 
 
+#- Admin already im database . 
+username: abbasdossa password : fast123
+
 #- TO run the test cases , stay in the frontend directory and run -> npm run test
 
 
@@ -63,3 +66,5 @@ number of RSVPs.
 
 #-User Interface: The platform should have a user-friendly interface where users can
 easily navigate and perform actions.
+
+#- Admin view integratted with user view.
